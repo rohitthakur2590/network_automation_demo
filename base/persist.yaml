@@ -1,0 +1,35 @@
+---
+- hosts: all
+  gather_facts: true
+  tasks:
+    - block: 
+      - name: Set Timestamp
+        ansible.builtin.set_fact:
+          time: "{{ lookup('pipe', 'date \"+%Y-%m-%d\"') }}"
+          num: "{{ 100 | random }}"  
+        
+      - name: Network Resource Manager
+        ansible.builtin.include_role:
+          name: network.base.persist
+        vars:
+          # ansible_network_os: cisco.ios.ios
+          # resources:
+          #   - 'interfaces'
+          #   - 'l2_interfaces'
+          #   - 'l3_interfaces'
+          #   - 'bgp_global'
+          #   - 'bgp_address_family'
+          #   - 'ospfv2'
+          #   - 'ospfv3'
+          #   - 'ospf_interfaces'
+          data_store:
+            scm:
+              parent_directory: "/home/rhel"
+              origin:
+                url: https://github.com/rohitthakur2590/network_automation_demo.git
+                token: "{{ Ttoken }}"
+                tag:
+                  annotation: "demo-tag_{{ time }}_{{ num }}"
+                  message: "backup_config"
+                user:
+                  name: rohitthakur2590
