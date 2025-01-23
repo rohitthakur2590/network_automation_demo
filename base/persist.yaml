@@ -13,15 +13,15 @@
           name: network.base.persist
         vars:
           # ansible_network_os: cisco.ios.ios
-          # resources:
-          #   - 'interfaces'
-          #   - 'l2_interfaces'
-          #   - 'l3_interfaces'
-          #   - 'bgp_global'
-          #   - 'bgp_address_family'
-          #   - 'ospfv2'
-          #   - 'ospfv3'
-          #   - 'ospf_interfaces'
+          resources:
+            - 'interfaces'
+            - 'l2_interfaces'
+            - 'l3_interfaces'
+            - 'bgp_global'
+            - 'bgp_address_family'
+            - 'ospfv2'
+            - 'ospfv3'
+            - 'ospf_interfaces'
           data_store:
             scm:
               parent_directory: "/home/rhel"
