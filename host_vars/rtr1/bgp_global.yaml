@@ -1,0 +1,15 @@
+bgp_global:
+    as_number: '500'
+    bgp:
+        default:
+            ipv4_unicast: true
+            route_target:
+                filter: true
+        log_neighbor_changes: true
+    neighbors:
+    -   neighbor_address: 12.0.0.1
+        remote_as: '500'
+    -   neighbor_address: 23.0.0.1
+        remote_as: '500'
+    networks:
+    -   address: 10.0.0.0
