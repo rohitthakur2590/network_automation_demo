@@ -27,7 +27,7 @@
               parent_directory: "/home/rhel"
               origin:
                 url: https://github.com/rohitthakur2590/network_automation_demo.git
-                token: "{{ Ttoken }}"
+                token: "{{ token }}"
                 tag:
                   annotation: "demo-tag_{{ time }}_{{ num }}"
                   message: "backup_config"
