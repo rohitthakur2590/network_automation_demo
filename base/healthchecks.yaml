@@ -1,0 +1,20 @@
+---
+- name: Perform OSPF health checks
+  hosts: all
+  gather_facts: false
+  tasks:
+  - name: OSPF Manager
+    ansible.builtin.include_role:
+      name: network.ospf.health_checks
+    vars:
+      ansible_network_os: cisco.nxos.nxos
+      operations:
+        - name: health_check
+          vars:
+            details: True
+            checks:
+              - name: all_neighbors_up
+              - name: all_neighbors_down
+              - name: min_neighbors_up
+                min_count: 1
+              - name: ospf_status_summary
