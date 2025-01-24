@@ -16,14 +16,13 @@
       ansible.builtin.include_role:
         name: network.backup.backup
       vars:
-        operation: backup
         type: "{{ backup_type }}"  # Set by survey
         data_store:
           scm:
             origin:
-              url: "https://github.com/rohitthakur2590/network_automation_demo"  # Set by survey
+              url: "{{ gh_repo }}"  # Set by survey
               token: "{{ token }}"  # Set by survey
               user:
                 name: "{{ gh_user }}"  # Set by survey
                 email: "{{ gh_email }}"  # Set by survey
-          backup_file_name: "{{ backup_file_name_final }}"  # Use conditional name
+          backup_file_name: "{{ backup_file_name }}"  # Use conditional name
