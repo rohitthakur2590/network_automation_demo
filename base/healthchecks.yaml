@@ -7,7 +7,6 @@
     ansible.builtin.include_role:
       name: network.ospf.health_checks
     vars:
-      ansible_network_os: cisco.nxos.nxos
       operations:
         - name: health_check
           vars:
