@@ -1,0 +1,26 @@
+---
+- hosts: all
+  gather_facts: true
+  tasks:
+    - name: Deploy Network Config
+      ansible.builtin.include_role:
+        name: network.base.deploy
+      vars:
+        resources:
+          - 'interfaces'
+          - 'l2_interfaces'
+          - 'l3_interfaces'
+          - 'bgp_global'
+          - 'bgp_address_family'
+          - 'ospfv2'
+          - 'ospfv3'
+          - 'ospf_interfaces'
+        data_store:
+          scm:  
+            parent_directory: "/home/rhel"
+            origin:
+              url: "https://github.com/rohitthakur2590/network_automation_demo.git"
+              token: "{{ token }}"
+              user:
+                name: rohitthakur2590
+                email: rohitthakur2590@outlook.com
