@@ -15,8 +15,8 @@
     - name: Create Network Backup and Push to SCM
       ansible.builtin.include_role:
         name: network.backup.backup
-        operation: backup
       vars:
+        operation: backup
         type: "{{ backup_type }}"  # Set by survey
         data_store:
           scm:
