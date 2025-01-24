@@ -1,19 +1,19 @@
 ---
-- name: Perform OSPF health checks
+- name: Perform health checks
   hosts: all
   gather_facts: false
   tasks:
-  - name: OSPF Manager
+  - name: Health hecks
     ansible.builtin.include_role:
       name: network.ospf.health_checks
     vars:
-      operations:
-        - name: health_check
-          vars:
-            details: True
-            checks:
-              - name: all_neighbors_up
-              - name: all_neighbors_down
-              - name: min_neighbors_up
-                min_count: 1
-              - name: ospf_status_summary
+      ospf_health_check:
+        name: health_check
+        vars:
+          details: True
+          checks:
+            - name: all_neighbors_up
+            - name: all_neighbors_down
+            - name: min_neighbors_up
+              min_count: 1
+            - name: ospf_status_summary
