@@ -2,7 +2,6 @@ interfaces:
 -   duplex: auto
     enabled: true
     name: GigabitEthernet0/0
-    description: Link to R2
     speed: auto
 -   duplex: auto
     enabled: true
