@@ -13,7 +13,6 @@
           details: True
           checks:
             - name: all_neighbors_up
-            - name: all_neighbors_down
             - name: min_neighbors_up
               min_count: 1
             - name: bgp_status_summary
