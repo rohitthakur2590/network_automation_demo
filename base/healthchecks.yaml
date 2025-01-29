@@ -5,7 +5,7 @@
   tasks:
   - name: Health hecks
     ansible.builtin.include_role:
-      name: network.ospf.health_checks
+      name: network.bgp.health_checks
     vars:
       ospf_health_check:
         name: health_check
@@ -16,4 +16,4 @@
             - name: all_neighbors_down
             - name: min_neighbors_up
               min_count: 1
-            - name: ospf_status_summary
+            - name: bgp_status_summary
