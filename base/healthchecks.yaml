@@ -3,7 +3,8 @@
   hosts: all
   gather_facts: true
   tasks:
-  - name: Health hecks
+  - name: Health checks
+    register: interfaces_result
     ansible.builtin.include_role:
       name: network.interfaces.health_checks
     vars:
