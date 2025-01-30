@@ -21,7 +21,6 @@
             - 'ospfv2'
             - 'ospfv3'
             - 'ospf_interfaces'
-            - 'vlans'
             - 'bgp_global'
             - 'bgp_global'
           data_store:
