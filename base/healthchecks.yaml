@@ -5,7 +5,7 @@
   tasks:
   - name: Health hecks
     ansible.builtin.include_role:
-      name: network.bgp.health_checks
+      name: network.interfaces.health_checks
     vars:
       interfaces_health_check:
         name: health_check
