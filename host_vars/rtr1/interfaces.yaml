@@ -12,7 +12,7 @@ interfaces:
     name: GigabitEthernet0/2
     speed: auto
 -   duplex: auto
-    enabled: true
+    enabled: false
     name: GigabitEthernet0/3
     speed: auto
 -   enabled: true
