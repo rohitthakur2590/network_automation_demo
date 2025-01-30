@@ -1,7 +1,7 @@
 ---
 - name: Perform health checks
   hosts: all
-  gather_facts: false
+  gather_facts: true
   tasks:
   - name: Health hecks
     ansible.builtin.include_role:
