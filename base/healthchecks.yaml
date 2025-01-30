@@ -7,6 +7,7 @@
     ansible.builtin.include_role:
       name: network.interfaces.health_checks
     vars:
+      ansible_network_os: cisco.ios.ios
       interfaces_health_check:
         name: health_check
         vars:
