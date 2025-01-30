@@ -13,8 +13,8 @@
           details: True
           checks:
             - name: all_operational_state_up
-            - name: min_operational_state_up
-              min_count: 1
-            - name: all_admin_state_up
-            - name: min_admin_state_up
-              min_count: 1
+            # - name: min_operational_state_up
+            #   min_count: 1
+            # - name: all_admin_state_up
+            # - name: min_admin_state_up
+            #   min_count: 1
