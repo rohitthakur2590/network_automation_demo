@@ -4,7 +4,7 @@
   gather_facts: true
   tasks:
   - name: Health checks
-    register: health_checks_result
+    register: health_results
     ansible.builtin.include_role:
       name: network.interfaces.health_checks
     vars:
@@ -16,3 +16,9 @@
           checks:
             - name: all_admin_state_up
             - name: all_operational_state_up
+
+
+  - name: Display health results
+    ansible.builtin.debug:
+      msg: "{{ health_results }}"
+      
