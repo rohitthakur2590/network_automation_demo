@@ -13,7 +13,7 @@
         vars:
           details: True
           checks:
-            - name: all_operational_state_up
+            - name: all_admin_state_down
             # - name: min_operational_state_up
             #   min_count: 1
             # - name: all_admin_state_up
