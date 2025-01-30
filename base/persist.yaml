@@ -12,7 +12,6 @@
         ansible.builtin.include_role:
           name: network.base.persist
         vars:
-          # ansible_network_os: cisco.ios.ios
           resources:
             - 'interfaces'
             - 'l2_interfaces'
@@ -22,6 +21,9 @@
             - 'ospfv2'
             - 'ospfv3'
             - 'ospf_interfaces'
+            - 'vlans'
+            - 'bgp_global'
+            - 'bgp_global'
           data_store:
             scm:
               parent_directory: "/home/rhel"
