@@ -4,7 +4,7 @@
   gather_facts: true
   tasks:
   - name: Health checks
-    register: interfaces_result
+    register: health_checks_result
     ansible.builtin.include_role:
       name: network.interfaces.health_checks
     vars:
@@ -14,9 +14,5 @@
         vars:
           details: True
           checks:
-            - name: all_admin_state_down
-            # - name: min_operational_state_up
-            #   min_count: 1
-            # - name: all_admin_state_up
-            # - name: min_admin_state_up
-            #   min_count: 1
+            - name: all_admin_state_up
+            - name: all_operational_state_up
