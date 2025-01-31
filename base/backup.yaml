@@ -21,9 +21,9 @@
         data_store:
           scm:
             origin:
-              url: "{{ gh_repo }}"  # Set by survey
+              url: "https://github.com/rohitthakur2590/network_automation_demo"  # Set by survey
               token: "{{ token }}"  # Set by survey
               user:
-                name: "{{ gh_user }}"  # Set by survey
-                email: "{{ gh_email }}"  # Set by survey
+                name: "rohitthakur2590"  # Set by survey
+                email: "rohitthakur2590@outlook.com"  # Set by survey
           backup_file_name: "{{ backup_file_name }}"  # Use conditional name
