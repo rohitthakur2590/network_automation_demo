@@ -3,21 +3,20 @@
   hosts: all
   gather_facts: false
   tasks:
-    - name: Create timestamp for backup if backup_file_name is not provided
-      ansible.builtin.set_fact:
-        datetime: "{{ lookup('pipe', 'date +%Y-%m-%d-%H-%M') }}"
-      when: backup_file_name is not defined
+    # - name: Create timestamp for backup if backup_file_name is not provided
+    #   ansible.builtin.set_fact:
+    #     datetime: "{{ lookup('pipe', 'date +%Y-%m-%d-%H-%M') }}"
+    #   when: backup_file_name is not defined
 
-    - name: Set backup file name
-      ansible.builtin.set_fact:
-        backup_file_name_final: "{{ backup_file_name | default(datetime) }}"
+    # - name: Set backup file name
+    #   ansible.builtin.set_fact:
+    #     backup_file_name_final: "{{ backup_file_name | default(datetime) }}"
 
     - name: Create Network Backup and Push to SCM
       ansible.builtin.include_role:
         name: network.backup.backup
       vars:
         operation: backup
-        type: "{{ backup_type }}"  # Set by survey
         data_store:
           scm:
             origin:
@@ -26,4 +25,4 @@
               user:
                 name: "rohitthakur2590"  # Set by survey
                 email: "rohitthakur2590@outlook.com"  # Set by survey
-          backup_file_name: "{{ backup_file_name }}"  # Use conditional name
+          backup_file_name: "demo_backup"  # Use conditional name
