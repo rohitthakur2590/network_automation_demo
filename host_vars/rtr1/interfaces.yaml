@@ -2,6 +2,7 @@ interfaces:
 -   duplex: auto
     enabled: true
     name: GigabitEthernet0/0
+    description: This is to be removed
     speed: auto
 -   duplex: auto
     enabled: true
